@@ -1,0 +1,201 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-container {
+  background-color: white;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Popup message styles */
+.popup-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  color: white;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideDown 0.5s forwards, fadeOut 1s 1.5s forwards;
+}
+
+.popup-message.green {
+  background-color: #4CAF50;
+}
+
+.popup-message.red {
+  background-color: #e53935;
+}
+
+.popup-message.blue {
+  background-color: #2196F3;
+}
+
+.popup-icon {
+  margin-right: 8px;
+  color: white;
+}
+
+@keyframes slideDown {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Input Field */
+.input-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.main-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+}
+
+.submit-btn {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Task List */
+.task-list-container {
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+}
+
+.task-serial {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #4caf50;
+}
+
+.task-title {
+  font-size: 14px;
+  color: #333;
+}
+
+.task-actions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.task-actions .edit-btn {
+  color: #2196F3;
+}
+
+.task-actions .delete-btn {
+  color: #f44336;
+}
+
+/* Hover Effects */
+.task-actions .edit-btn:hover {
+  color: #1976D2;
+}
+
+.task-actions .delete-btn:hover {
+  color: #d32f2f;
+}
+
+.task-item:hover {
+  background-color: #f1f1f1;
+  transition: 0.3s;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.pagination-btn {
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.pagination-btn:hover {
+  background-color: #ddd;
+}
+
+.previous-btn, .next-btn {
+  color: #007bff;
+}
+
+/* Responsiveness */
+@media (max-width: 500px) {
+  .app-container {
+    width: 90%;
+  }
+}
